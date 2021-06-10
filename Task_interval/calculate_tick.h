@@ -12,5 +12,7 @@ typedef struct time_interval
     unsigned int  interval; //time interval
 };
 
+struct time_interval Time_interval;
+TickType_t timeold;
 
 #endif
