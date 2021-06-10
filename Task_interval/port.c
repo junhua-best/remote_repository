@@ -4,9 +4,8 @@ __asm void xPortPendSVHandler( void )
 	extern uxCriticalNesting;
 	extern pxCurrentTCB;
 	extern vTaskSwitchContext;
-	extern calculate_interval;
 	extern pxCurrentTCB_COPY;
-	extern judge_whether_calculate;
+	extern judge_and_calculate;
 	
 	
 	PRESERVE8
@@ -27,7 +26,7 @@ __asm void xPortPendSVHandler( void )
 	isb
 	bl pxCurrentTCB_COPY
 	bl vTaskSwitchContext
-	bl judge_whether_calculate 
+	bl judge_and_calculate   /*Executes the function to calculate the interval output*/
 	mov r0, #0
 	msr basepri, r0
 	ldmia sp!, {r3, r14}
@@ -37,7 +36,6 @@ __asm void xPortPendSVHandler( void )
 	ldmia r0!, {r4-r11}			/* Pop the registers and the critical nesting count. */
 	msr psp, r0
 	isb
-	bl calculate_interval  /*Executes the function to calculate the interval output*/
 	bx r14
 	nop
 }
