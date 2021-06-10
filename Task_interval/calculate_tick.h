@@ -11,8 +11,8 @@ typedef struct time_interval
 {
     unsigned int  interval; //time interval
 };
-
+//Add some global variables
 struct time_interval Time_interval;
-TickType_t timeold;
+unsigned int  timeold;
 
 #endif

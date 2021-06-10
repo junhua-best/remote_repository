@@ -1,5 +1,5 @@
 /*
-These three files are used to modify the Pendsv interrupt function.
+These two files are used to modify the Pendsv interrupt function.
 
 The functions are as follows:
 

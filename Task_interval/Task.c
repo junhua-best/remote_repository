@@ -1,8 +1,8 @@
+#include "calculate_tick.h"
 
 //Add some global variables
 PRIVILEGED_DATA TCB_t* volatile pxCurrentTCB_copy = NULL;
-extern struct time_interval Time_interval;
-extern TickType_t timeold;
+
 
 /*Back up the current task*/
 void pxCurrentTCB_COPY(void)
