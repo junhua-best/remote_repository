@@ -25,7 +25,7 @@
  * 1 tab == 4 spaces!
  */
 
- /******************************************************************************
+/******************************************************************************
   * NOTE: Windows will not be running the FreeRTOS demo threads continuously, so
   * do not expect to get real time behaviour from the FreeRTOS Windows port, or
   * this demo application.  Also, the timing information in the FreeRTOS+Trace
@@ -82,7 +82,7 @@
   * can crash the port.
   */
 
-  /* Standard includes. */
+/* Standard includes. */
 #include <stdio.h>
 #include <conio.h>
 
@@ -93,13 +93,13 @@
 #include "semphr.h"
 #include "calculate_tick.h"
 
-static void task1(void* pvParameters);
-static void task2(void* pvParameters);
-static void task3(void* pvParameters);
+static void task1(void *pvParameters);
+static void task2(void *pvParameters);
+static void task3(void *pvParameters);
 
 void delay_bymyself(int number);
 
-//¼ÆËãtickµÄ½á¹¹Ìå
+//è®¡ç®—tickçš„ç»“æž„ä½“
 /*
 
 
@@ -109,95 +109,82 @@ void delay_bymyself(int number);
 /*** SEE THE COMMENTS AT THE TOP OF THIS FILE ***/
 void main_blinky(void)
 {
-	
-	
-		
-		
-		xTaskCreate(task1,"TASK1", configMINIMAL_STACK_SIZE, NULL,1,NULL);							
 
-		xTaskCreate(task2, "TASK2", configMINIMAL_STACK_SIZE, NULL, 2, NULL);
+  xTaskCreate(task1, "TASK1", configMINIMAL_STACK_SIZE, NULL, 1, NULL);
 
-		xTaskCreate(task3, "TASK3", configMINIMAL_STACK_SIZE, NULL, 3, NULL);
-		
-		vTaskStartScheduler();
-		
+  xTaskCreate(task2, "TASK2", configMINIMAL_STACK_SIZE, NULL, 2, NULL);
 
-	/* If all is well, the scheduler will now be running, and the following
+  xTaskCreate(task3, "TASK3", configMINIMAL_STACK_SIZE, NULL, 3, NULL);
+
+  vTaskStartScheduler();
+
+  /* If all is well, the scheduler will now be running, and the following
 	line will never be reached.  If the following line does execute, then
 	there was insufficient FreeRTOS heap memory available for the idle and/or
 	timer tasks	to be created.  See the memory management section on the
 	FreeRTOS web site for more details. */
-	for (;; );
+  for (;;)
+    ;
 }
 /*-----------------------------------------------------------*/
 
-
-
-
-
-static void task1(void* pvParameters)
+static void task1(void *pvParameters)
 {
 
-	/* Prevent the compiler warning about the unused parameter. */
-	(void)pvParameters;
+  /* Prevent the compiler warning about the unused parameter. */
+  (void)pvParameters;
 
-
-	for (;; )
-	{
-		//printf("back in  Task1\r\n");
-		delay_bymyself(300);
-		 vTaskDelay(600); 
-		
-	}
+  for (;;)
+  {
+    //printf("back in  Task1\r\n");
+    delay_bymyself(300);
+    vTaskDelay(600);
+  }
 }
 /*-----------------------------------------------------------*/
 
-static void task2(void* pvParameters)
+static void task2(void *pvParameters)
 {
 
-	/* Prevent the compiler warning about the unused parameter. */
-	(void)pvParameters;
+  /* Prevent the compiler warning about the unused parameter. */
+  (void)pvParameters;
 
-	for (;; )
-	{
-		
-		delay_bymyself(400);
-		vTaskDelay(700);
+  for (;;)
+  {
 
-	}
+    delay_bymyself(400);
+    vTaskDelay(700);
+  }
 }
 /*-----------------------------------------------------------*/
 
-
-static void task3(void* pvParameters)
+static void task3(void *pvParameters)
 {
-	//printf("get in Get_time task\r\n");
-	uint8_t pcWriteBuffer[500];
-	TickType_t nums=0;
+  //printf("get in Get_time task\r\n");
+  uint8_t pcWriteBuffer[500];
+  TickType_t nums = 0;
 
-	while (1)
-	{
+  while (1)
+  {
 
-		if (nums == 10)
-		{
+    if (nums == 10)
+    {
 
-			vTaskGetRunTimeStats((char*)&pcWriteBuffer);
-			printf("\r\nÈÎÎñÃû       ÔËÐÐ¼ÆÊý         Ê¹ÓÃÂÊ\r\n");
-			printf("%s\r\n", pcWriteBuffer);
-			nums = 0;
-		}
-		nums++;
-	
-		delay_bymyself(500);
-		vTaskDelay(800);
-		
-	}
+      vTaskGetRunTimeStats((char *)&pcWriteBuffer);
+      printf("\r\nä»»åŠ¡å       è¿è¡Œè®¡æ•°         ä½¿ç”¨çŽ‡\r\n");
+      printf("%s\r\n", pcWriteBuffer);
+      nums = 0;
+    }
+    nums++;
+
+    delay_bymyself(500);
+    vTaskDelay(800);
+  }
 }
-
 
 void delay_bymyself(int number)
 {
-	while ((number--) > 0)
-		for (int i = 0; i < 3000000; i++); 
-
+  while ((number--) > 0)
+    for (int i = 0; i < 3000000; i++)
+      ;
 }
