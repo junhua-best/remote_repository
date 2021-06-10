@@ -1,8 +1,8 @@
 
 //Add some global variables
 PRIVILEGED_DATA TCB_t* volatile pxCurrentTCB_copy = NULL;
-struct time_interval Time_interval;
-TickType_t timeold;
+extern struct time_interval Time_interval;
+extern TickType_t timeold;
 
 /*Back up the current task*/
 void pxCurrentTCB_COPY(void)
