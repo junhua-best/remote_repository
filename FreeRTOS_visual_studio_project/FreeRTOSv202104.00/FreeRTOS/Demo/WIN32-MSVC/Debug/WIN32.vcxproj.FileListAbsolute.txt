@@ -1,0 +1,1 @@
+D:\Users\Git repository_local\FreeRTOS_visual_studio_project\FreeRTOSv202104.00\FreeRTOS\Demo\WIN32-MSVC\Debug\RTOSDemo.exe

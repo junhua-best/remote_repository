@@ -1,0 +1,56 @@
+﻿  AbortDelay.c
+D:\Users\Git repository_local\FreeRTOS_visual_studio_project\FreeRTOSv202104.00\FreeRTOS\Source\include\task.h(2594,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  BlockQ.c
+D:\Users\Git repository_local\FreeRTOS_visual_studio_project\FreeRTOSv202104.00\FreeRTOS\Source\include\task.h(2594,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  blocktim.c
+D:\Users\Git repository_local\FreeRTOS_visual_studio_project\FreeRTOSv202104.00\FreeRTOS\Source\include\task.h(2594,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  countsem.c
+D:\Users\Git repository_local\FreeRTOS_visual_studio_project\FreeRTOSv202104.00\FreeRTOS\Source\include\task.h(2594,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  death.c
+D:\Users\Git repository_local\FreeRTOS_visual_studio_project\FreeRTOSv202104.00\FreeRTOS\Source\include\task.h(2594,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  dynamic.c
+D:\Users\Git repository_local\FreeRTOS_visual_studio_project\FreeRTOSv202104.00\FreeRTOS\Source\include\task.h(2594,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  EventGroupsDemo.c
+D:\Users\Git repository_local\FreeRTOS_visual_studio_project\FreeRTOSv202104.00\FreeRTOS\Source\include\task.h(2594,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  flop.c
+D:\Users\Git repository_local\FreeRTOS_visual_studio_project\FreeRTOSv202104.00\FreeRTOS\Source\include\task.h(2594,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  GenQTest.c
+D:\Users\Git repository_local\FreeRTOS_visual_studio_project\FreeRTOSv202104.00\FreeRTOS\Source\include\task.h(2594,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  integer.c
+D:\Users\Git repository_local\FreeRTOS_visual_studio_project\FreeRTOSv202104.00\FreeRTOS\Source\include\task.h(2594,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  IntSemTest.c
+D:\Users\Git repository_local\FreeRTOS_visual_studio_project\FreeRTOSv202104.00\FreeRTOS\Source\include\task.h(2594,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  MessageBufferAMP.c
+D:\Users\Git repository_local\FreeRTOS_visual_studio_project\FreeRTOSv202104.00\FreeRTOS\Source\include\task.h(2594,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  PollQ.c
+D:\Users\Git repository_local\FreeRTOS_visual_studio_project\FreeRTOSv202104.00\FreeRTOS\Source\include\task.h(2594,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  QPeek.c
+D:\Users\Git repository_local\FreeRTOS_visual_studio_project\FreeRTOSv202104.00\FreeRTOS\Source\include\task.h(2594,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  QueueOverwrite.c
+D:\Users\Git repository_local\FreeRTOS_visual_studio_project\FreeRTOSv202104.00\FreeRTOS\Source\include\task.h(2594,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  QueueSet.c
+D:\Users\Git repository_local\FreeRTOS_visual_studio_project\FreeRTOSv202104.00\FreeRTOS\Source\include\task.h(2594,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  QueueSetPolling.c
+D:\Users\Git repository_local\FreeRTOS_visual_studio_project\FreeRTOSv202104.00\FreeRTOS\Source\include\task.h(2594,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  recmutex.c
+D:\Users\Git repository_local\FreeRTOS_visual_studio_project\FreeRTOSv202104.00\FreeRTOS\Source\include\task.h(2594,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  semtest.c
+D:\Users\Git repository_local\FreeRTOS_visual_studio_project\FreeRTOSv202104.00\FreeRTOS\Source\include\task.h(2594,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  StaticAllocation.c
+D:\Users\Git repository_local\FreeRTOS_visual_studio_project\FreeRTOSv202104.00\FreeRTOS\Source\include\task.h(2594,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  正在生成代码...
+  正在编译...
+  MessageBufferDemo.c
+D:\Users\Git repository_local\FreeRTOS_visual_studio_project\FreeRTOSv202104.00\FreeRTOS\Source\include\task.h(2594,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  StreamBufferDemo.c
+D:\Users\Git repository_local\FreeRTOS_visual_studio_project\FreeRTOSv202104.00\FreeRTOS\Source\include\task.h(2594,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  StreamBufferInterrupt.c
+D:\Users\Git repository_local\FreeRTOS_visual_studio_project\FreeRTOSv202104.00\FreeRTOS\Source\include\task.h(2594,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  TaskNotify.c
+D:\Users\Git repository_local\FreeRTOS_visual_studio_project\FreeRTOSv202104.00\FreeRTOS\Source\include\task.h(2594,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  TaskNotifyArray.c
+D:\Users\Git repository_local\FreeRTOS_visual_studio_project\FreeRTOSv202104.00\FreeRTOS\Source\include\task.h(2594,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  timerdemo.c
+D:\Users\Git repository_local\FreeRTOS_visual_studio_project\FreeRTOSv202104.00\FreeRTOS\Source\include\task.h(2594,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  正在生成代码...
+  WIN32.vcxproj -> D:\Users\Git repository_local\FreeRTOS_visual_studio_project\FreeRTOSv202104.00\FreeRTOS\Demo\WIN32-MSVC\Debug\RTOSDemo.exe
