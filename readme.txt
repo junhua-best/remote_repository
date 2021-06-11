@@ -1,7 +1,8 @@
 这是FreeRTOS官网下载的系统，在VS2019编译后的工程，删除了一部分不影响的文件。
 使用方法：打开 \FreeRTOS_visual_studio_project\FreeRTOSv202104.00\FreeRTOS\Demo\WIN32-MSVC\WIN32.sln 运行本地调试器即可运行，无需配置。
 
-如果您需要复现统计切换任务间隔时间的实验，请更换change_file里面的几个文件。方法如下：
+如果您需要复现统计切换任务间隔时间的实验，可以下载FreeRTOS_vs_project_test_for_timeinterval分支下的文件，或者针对源工程更换一些文件：
+更换change_file里面的几个文件。方法如下：
 
 路径1：
 \FreeRTOSv202104.00\FreeRTOS\Demo\WIN32-MSVC\
