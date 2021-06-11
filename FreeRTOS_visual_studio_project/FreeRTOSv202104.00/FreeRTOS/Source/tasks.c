@@ -38,6 +38,7 @@
 #include "task.h"
 #include "timers.h"
 #include "stack_macros.h"
+#include "calculate_tick.h"
 
 /* Lint e9021, e961 and e750 are suppressed as a MISRA exception justified
  * because the MPU ports require MPU_WRAPPERS_INCLUDED_FROM_API_FILE to be defined
@@ -336,7 +337,30 @@ typedef tskTCB TCB_t;
 /*lint -save -e956 A manual analysis and inspection has been used to determine
  * which static variables must be declared volatile. */
 PRIVILEGED_DATA TCB_t * volatile pxCurrentTCB = NULL;
+//Add some global variables
+PRIVILEGED_DATA TCB_t* volatile pxCurrentTCB_copy = NULL;
 
+extern struct time_interval Time_interval;
+
+
+void SwitchContext_and_judge(void)
+{
+    pxCurrentTCB_copy = pxCurrentTCB; //备份现在的任务
+    vTaskSwitchContext();//寻找新任务
+    if (strcmp(pxCurrentTCB->pcTaskName, pxCurrentTCB_copy->pcTaskName) != 0)
+    {
+      
+        
+        TickType_t timenow;
+        timenow = xTaskGetTickCount();
+        Time_interval.interval = timenow - timeold;
+        printf("A task switch occurred, time interval=%d ms,  living task %s  to task %s \r\n",
+            Time_interval.interval, pxCurrentTCB_copy->pcTaskName, pxCurrentTCB->pcTaskName);
+        timeold = timenow;
+       
+    }
+   
+}
 /* Lists for ready and blocked tasks. --------------------
  * xDelayedTaskList1 and xDelayedTaskList2 could be move to function scople but
  * doing so breaks some kernel aware debuggers and debuggers that rely on removing
@@ -3009,6 +3033,7 @@ BaseType_t xTaskIncrementTick( void )
 
 void vTaskSwitchContext( void )
 {
+    
     if( uxSchedulerSuspended != ( UBaseType_t ) pdFALSE )
     {
         /* The scheduler is currently suspended - do not allow a context
@@ -3061,6 +3086,7 @@ void vTaskSwitchContext( void )
         /* Select a new task to run using either the generic C or port
          * optimised asm code. */
         taskSELECT_HIGHEST_PRIORITY_TASK(); /*lint !e9079 void * is used as this macro is used with timers and co-routines too.  Alignment is known to be fine as the type of the pointer stored and retrieved is the same. */
+       //此时已经选好下一个任务，还没进行切换
         traceTASK_SWITCHED_IN();
 
         /* After the new task is switched in, update the global errno. */

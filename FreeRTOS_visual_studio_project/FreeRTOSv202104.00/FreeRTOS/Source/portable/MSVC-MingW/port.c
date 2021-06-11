@@ -26,12 +26,15 @@
  */
 
 /* Standard includes. */
+
 #include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
 
 /* Scheduler includes. */
 #include "FreeRTOS.h"
 #include "task.h"
-
+#include "calculate_tick.h"
 #ifdef __GNUC__
 	#include "mmsystem.h"
 #else
@@ -47,6 +50,9 @@
 #define portSIMULATED_TIMER_THREAD_PRIORITY		 THREAD_PRIORITY_HIGHEST
 #define portTASK_THREAD_PRIORITY				 THREAD_PRIORITY_ABOVE_NORMAL
 
+
+//extern struct time_interval Time_interval;
+extern void SwitchContext_and_judge(void);
 /*
  * Created as a high priority thread, this function uses a timer to simulate
  * a tick interrupt being generated on an embedded target.  In this Windows
@@ -436,7 +442,8 @@ CONTEXT xContext;
 			pvOldCurrentTCB = pxCurrentTCB;
 
 			/* Select the next task to run. */
-			vTaskSwitchContext();
+			//vTaskSwitchContext();
+			SwitchContext_and_judge();
 
 			/* If the task selected to enter the running state is not the task
 			that is already in the running state. */
@@ -451,6 +458,8 @@ CONTEXT xContext;
 				or yielding then the task will block on a yield event after the
 				yield operation in case the 'suspend' operation doesn't take
 				effect immediately.  */
+				
+				
 				pxThreadState = ( ThreadState_t *) *( ( size_t * ) pvOldCurrentTCB );
 				SuspendThread( pxThreadState->pvThread );
 
@@ -569,9 +578,22 @@ void vPortEndScheduler( void )
 }
 /*-----------------------------------------------------------*/
 
+
 void vPortGenerateSimulatedInterrupt( uint32_t ulInterruptNumber )
 {
-ThreadState_t *pxThreadState = ( ThreadState_t *) *( ( size_t * ) pxCurrentTCB );
+	/*
+	//修改模拟程序，加入求时间tick代码段
+	TickType_t timenow;
+	int time;
+	//timenow = xTaskGetTickCountFromISR();
+	timenow=xTaskGetTickCount();
+	Time_interval.interval =   timenow- Time_interval.xGetin_Time;
+	//time=pdTICKS_TO_MS(Time_interval.interval);
+	printf("A task switch occurred,time interval=%d,living task name=%s\r\n",Time_interval.interval,Time_interval.name);
+	 */
+	
+	
+	ThreadState_t *pxThreadState = ( ThreadState_t *) *( ( size_t * ) pxCurrentTCB );
 
 	configASSERT( xPortRunning );
 
