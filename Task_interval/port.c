@@ -39,3 +39,34 @@ __asm void xPortPendSVHandler( void )
 	bx r14
 	nop
 }
+
+void update_deadline_systick(void)
+{
+	for (int i = 0; i < task_numbers; i++)
+			{
+			deadline_systick[i] += 1;
+			/*If a task has not been run at least once within its corresponding task_deadline*/
+			if (deadline_systick[i] > Time_interval.task_deadline[i])
+				{
+				printf("The task  %d was not carried out within the deadline %d\r\n" ,i, 							Time_interval.task_deadline[i]);
+				deadline_systick[i] = 0; //Reset to 0 after timeout
+				}
+			}
+}
+/*Add a function to the systick interrupt function*/
+void xPortSysTickHandler( void )
+{
+	vPortRaiseBASEPRI();
+	{
+		/* Increment the RTOS tick. */
+		if( xTaskIncrementTick() != pdFALSE )
+		{
+			/*Call the function we defined,*/
+			update_deadline_systick();
+			/* A context switch is required.  Context switching is performed in
+			the PendSV interrupt.  Pend the PendSV interrupt. */
+			portNVIC_INT_CTRL_REG = portNVIC_PENDSVSET_BIT;
+		}
+	}
+	vPortClearBASEPRIFromISR();
+}
